@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para mostrar errores
     function showErrors(errors) {
         // Eliminar mensajes de error anteriores
-        const existingErrors = document.querySelectorAll('.error-message');
+        const existingErrors = entryForm.querySelectorAll('.error-message, .error-container');
         existingErrors.forEach(error => error.remove());
 
         // Crear y mostrar nuevos mensajes de error
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dateInput = entryForm.querySelector('input[name="date"]');
         dateInput.valueAsDate = new Date();
         // Limpiar errores anteriores
-        const existingErrors = document.querySelectorAll('.error-message, .error-container');
+        const existingErrors = entryForm.querySelectorAll('.error-message, .error-container');
         existingErrors.forEach(error => error.remove());
     }
 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.add('hidden');
         entryForm.reset();
         // Limpiar errores
-        const existingErrors = document.querySelectorAll('.error-message, .error-container');
+        const existingErrors = entryForm.querySelectorAll('.error-message, .error-container');
         existingErrors.forEach(error => error.remove());
     }
 
@@ -232,4 +232,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Escuchar cambios en el modo oscuro
     darkModeMediaQuery.addListener(handleDarkModeChange);
     handleDarkModeChange(darkModeMediaQuery);
-}); 
+});
